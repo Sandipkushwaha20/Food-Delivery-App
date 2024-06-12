@@ -18,21 +18,22 @@
 - Tree Shaking - remove unused code for you
 - Different dev and production bundles
 
-#Namaste Food
+# Namaste Food
 
  * Header
- *  -Logo
- *  Navitems
- *  -Home
- *  -About
- *  -Cart
+ *  - Logo
+ *  - Navitems
+ *  - Home
+ *  - About
+ *  - Cart
  *
  * Body
  *  - search
  *  - RestaurantContainer
  *    - RestauractCard
  *     - img
- *     - Name of Res , star Rating, cuisine, delevery time
+ *     - Name of Res , star Rating,
+ *     - cuisine, delevery time
  * Footer
  *  - Copyright
  *  - Links
@@ -44,14 +45,17 @@
 
  - Default Export/Import
 
- export default Component;
- import Component from "path";
+    export default Component;
+    import Component from "path";
 
 
  - Named Export/Import
 
- export const Component;
- import {Component} from "path";
-
+    export const Component;
+    import {Component} from "path";
+ -Node: Can I use a default export along with named export ? -> YES 
 
 # React Hooks
+ (Normal JS utility funtions)
+ - useState()
+ - useEffect()
