@@ -1,8 +1,8 @@
 # React ✈️
 
 # Parcel
-<!-- - Dev Build -->
-<!-- - Local Server
+- Dev Build
+- Local Server
 - HMR - Hot module Replacement
 - File Watching algoritham - written in C++
 - Caching - Faster Builds
@@ -16,11 +16,10 @@
 - Error Handling
 - HTTPs
 - Tree Shaking - remove unused code for you
-- Different dev and production bundles -->
+- Different dev and production bundles
 
 #Namaste Food
 
-<!-- 
  * Header
  *  -Logo
  *  Navitems
@@ -39,12 +38,11 @@
  *  - Links
  *  - Address
  *  - Contact
-  -->
 
 
  # Two Types of  Export/Import
 
- <!-- - Default Export/Import
+ - Default Export/Import
 
  export default Component;
  import Component from "path";
@@ -53,7 +51,7 @@
  - Named Export/Import
 
  export const Component;
- import {Component} from "path"; -->
+ import {Component} from "path";
 
 
 # React Hooks
