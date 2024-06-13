@@ -58,4 +58,9 @@
 # React Hooks
  (Normal JS utility funtions)
  - useState()
- - useEffect()
+ - useEffect() it will called after the your component is renderd
+
+
+# rfce
+
+# Whenever state variable update, react triggers a reconciliaton cycle(re-renders the component)
