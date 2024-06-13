@@ -20,21 +20,21 @@
 
 # Namaste Food
 
- * Header
+ ## Header
  *  - Logo
  *  - Navitems
  *  - Home
  *  - About
  *  - Cart
  *
- * Body
+ ## Body
  *  - search
  *  - RestaurantContainer
  *    - RestauractCard
  *     - img
  *     - Name of Res , star Rating,
  *     - cuisine, delevery time
- * Footer
+ ## Footer
  *  - Copyright
  *  - Links
  *  - Address
@@ -43,13 +43,13 @@
 
  # Two Types of  Export/Import
 
- - Default Export/Import
+ ## Default Export/Import
 
     export default Component;
     import Component from "path";
 
 
- - Named Export/Import
+ ## Named Export/Import
 
     export const Component;
     import {Component} from "path";
