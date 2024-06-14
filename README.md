@@ -63,4 +63,4 @@
 
 # rfce
 
-# Whenever state variable update, react triggers a reconciliaton cycle(re-renders the component)
+# Whenever state variable update, react triggers a reconciliation cycle(re-renders the component)
