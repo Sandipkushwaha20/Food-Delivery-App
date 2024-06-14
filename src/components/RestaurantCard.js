@@ -1,15 +1,18 @@
 import { IMG_CDN_URL } from "../utils/constants";
 
 //RestroCards
-const RestaurantCard = ({
-  cloudinaryImageId,
-  name,
-  cuisines,
-  areaName,
-  sla,
-  costForTwo,
-  avgRatingString,
-}) =>{
+const RestaurantCard = (props) =>{
+  const {resData} = props;
+  const{
+    cloudinaryImageId,
+    name,
+    cuisines,
+    areaName,
+    sla,
+    costForTwo,
+    avgRatingString,
+  } = resData?.info;
+
     return(
       <div className="res-card" style={{backgroundColor: "#f0f0f0"}}> 
         <img 
@@ -22,6 +25,8 @@ const RestaurantCard = ({
         <h4>{costForTwo ?? '₹200 for two'}</h4>
         <h4>{sla?.deliveryTime} minutes</h4>
         <h4>{sla?.lastMileTravelString ?? '2.0 km'}</h4>
+        <h3>{areaName}</h3>
+
       </div>
     )
   }
