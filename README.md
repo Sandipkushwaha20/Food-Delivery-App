@@ -69,11 +69,11 @@ export default UserClass;
 
 ## function based component(New Method)
   - const User = () =>{
-  -  return <div className="user-card">
+  -  return < div className="user-card">
   -      <h2>Name: Sandip Kushwaha</h2>
   -      < h3>Location: Prayagraj</ h3>
   -     < h2>Contact: dummy@gmail.com</ h2>
-  -  </div>
+  -  </ div>
 - }
 - export default User;
 - It return JSX code.
