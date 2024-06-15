@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 const User = () =>{
     useEffect(() =>{
-        const timer = setInterval(() =>{
-            console.log("Intercal Called");
-        },100);
-        return () =>{
-            clearInterval(timer);
-            console.log("useEffect return");
-        };
+        // const timer = setInterval(() =>{
+        //     console.log("Intercal Called");
+        // },100);
+        // return () =>{
+        //     clearInterval(timer);
+        //     console.log("useEffect return");
+        // };
     },[])
 
     return <div className="user-card">

@@ -12,7 +12,7 @@ class UserClass extends React.Component {
                 location: "dummy",
             }
          };
-         console.log("Constructor");
+        //  console.log("Constructor");
     }
     async componentDidMount(){
         //API Call
@@ -23,23 +23,23 @@ class UserClass extends React.Component {
             userInfo: json,
         });
 
-        console.log(json);
-        console.log("componentDidMount");
+        // console.log(json);
+        // console.log("componentDidMount");
 
     }
 
     componentDidUpdate(){
-        console.log("comDidUpdate");
+        // console.log("comDidUpdate");
     }
     
     componentWillUnmount(){
-        console.log("Unmount"); //It will called when I will leave this pge
+        // console.log("Unmount"); //It will called when I will leave this pge
     }
 
     render() {
 
         const {name , location , avatar_url} = this.state.userInfo;
-        console.log("render");
+        // console.log("render");
         // debugger;
         return( 
         <div className="user-card">

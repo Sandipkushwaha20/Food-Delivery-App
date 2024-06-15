@@ -1,6 +1,7 @@
 # React ✈️
 
 # Parcel
+- It's Basic application is bundling => bunles all the files and make a single file
 - Dev Build
 - Local Server
 - HMR - Hot module Replacement
