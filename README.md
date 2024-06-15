@@ -40,6 +40,43 @@
  *  - Address
  *  - Contact
 
+# Components
+- Just JS function which return  JSX code.
+
+ ## class based component(Older method)
+  - import React from "react";
+   class UserClass extends React.Component {
+      constructor(props){
+        super(props);
+
+        console.log(props);
+    }
+    render() {
+        const {name , location} = this.props;
+        return < div className="user-card">
+        < h2>Name: {name}</ h2>
+        < h3>Location: {location}</ h3>
+        < h2>Contact: sandipkushwaha2437@gmail.com</ h2>
+    </ div>
+      }
+   }
+
+export default UserClass;
+
+- It has a class which has render method, which return JSX code.
+- We use it in same way like function based components e.g. 
+< UserClass />
+
+## function based component(New Method)
+   const User = () =>{
+    return < div className="user-card">
+        < h2>Name: Sandip Kushwaha</ h2>
+        < h3>Location: Prayagraj</ h3>
+        < h2>Contact: sandipkushwaha2437@gmail.com</ h2>
+    </ div>
+}
+export default User;
+- It return JSX code.
 
  # Two Types of  Export/Import
 
@@ -58,7 +95,7 @@
 # React Hooks
  - It is Normal JS utility funtions.
  ## Whenever state variable update, react triggers a reconciliation cycle(re-renders the component). 
- - [text](https://github.com/acdlite/react-fiber-architecture)
+ - [text](https://github.com/acdlite/react-fiber-architecture) react-fiber
 
  ## Hooks can only be called inside of the body of a function component not from outside.
 
@@ -91,7 +128,65 @@
 
 ## 2 types of Routing in web apps
    ### Client Side Routing 
-   - e.g. <Link to="path"></Link> , It's not making network call, all the components are already loaded into our app when I loaded at the first time.
+    e.g. <Link to="path"></Link> 
+   - It's not making network call, all the components are already loaded into our app when I loaded at the first time.
    
    ### Server Side Routing 
-   - e.g. <a href="path"></a> , it's making network call and loading whole page again.
+    e.g. <as href="path"></as> 
+   - It's making network call and loading whole page again.
+
+
+# React Life Cycle Method
+
+                  Mounting
+                     |
+   "Render Phase"  Constructor
+                     |
+                   Render
+   -------------------------------------------------
+               React updates DOM
+   "CommitPhase"      |
+               ComponentDibMount
+
+
+   - Parent Constructor
+   - Parent Render
+      - 1st Constructor
+      - 1st Render
+      
+      - 2nd Constructor
+      - 2nd Render
+
+      - 3rd Constructor
+      - 3rd Render
+
+   <DOM UPDATED - IN SINGLE BATCH>
+      - 1st ComponentDibMount
+      - 2nd ComponentDibMount
+      - 3rd ComponentDibMount
+   
+   - Parent ComponentDibMount
+
+
+
+/***
+ * 
+ * ------MOUNTING----
+ * 
+ * Constructor(dummy)
+ * Render(dummy)
+ *      <HTML dummy>
+ * Componet Did Mount
+ *      <API Call>
+ *      <this.setState -> State variable is updated 
+ * --------UPDATE ---------
+ * 
+ *      render(API data)
+ *      <HTML (new API data)> At this point user will see name , location
+ *  component Did Update 
+ *  
+ * When I will leave the page the componentWillUnmount() will be called
+ * 
+ */
+
+ ### Using the async keyword allows you to use the await keyword to wait for the promise to resolve before proceeding with the next line of code.

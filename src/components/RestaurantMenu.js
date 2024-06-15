@@ -8,10 +8,10 @@ const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
 
   const {resId} = useParams(); //this will contain resId
-  console.log(resId);
+  // console.log(resId);
   useEffect(() => {
     fetchMenu();
-  });
+  },[]);
 
   const fetchMenu = async () => {
     const data = await fetch(
@@ -20,7 +20,7 @@ const RestaurantMenu = () => {
 
     const json = await data.json();
 
-    console.log(json);
+   //console.log(json);
     setResInfo(json.data);
     // console.log("dkdk");
   };
@@ -32,10 +32,8 @@ const RestaurantMenu = () => {
 
 
   const {itemCards} = 
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
   console.log(itemCards);
-  // console.log("render")
-
 
   return  (
     <div className="menu">
@@ -45,7 +43,8 @@ const RestaurantMenu = () => {
         {itemCards.map(item => 
           <li key={item?.card?.info?.id}>
             {item?.card?.info?.name} -{ "Rs."}
-            {item?.card?.info?.price/100}
+            {item?.card?.info?.price/100 || item?.card?.info?.defaultPrice/100
+            }
            </li>)}
         <li>{avgRating}</li>
         <li>{areaName}</li>
@@ -54,4 +53,5 @@ const RestaurantMenu = () => {
     </div>
   );
 };
+
 export default RestaurantMenu;
