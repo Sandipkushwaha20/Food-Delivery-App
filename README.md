@@ -138,15 +138,15 @@ export default UserClass;
 
 # React Life Cycle Method
 
-   -               Mounting
-   -                  |
-   - "Render Phase"  Constructor
-   -                  |
-   -                Render
+   -                    Mounting
+   -                       |
+   - "Render Phase"    Constructor
+   -                       |
+   -                    Render
    - *------------------------------------------------*
-   -            React updates DOM
-   - "CommitPhase"      |
-   -            ComponentDibMount
+   -                 React updates DOM
+   - "CommitPhase"         |
+   -                 ComponentDibMount
 
 
    - Parent Constructor
