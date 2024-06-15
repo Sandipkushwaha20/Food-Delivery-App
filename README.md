@@ -139,8 +139,8 @@ export default UserClass;
 # React Life Cycle Method
 
    -                    Mounting
-   -                       |
-   - "Render Phase"    Constructor
+   - "Render Phase"        |
+   -                   Constructor
    -                       |
    -                    Render
    - *------------------------------------------------*
