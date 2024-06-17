@@ -15,7 +15,8 @@ const RestaurantCard = (props) =>{
 
     return(
       <div className=" m-4 p-4 w-[300px] h-[460px] rounded-lg bg-gray-100
-       hover:bg-gray-200 items-center "> 
+       hover:bg-gray-200 items-center transform transition-transform duration-300
+        hover:scale-105"> 
         <img 
           className="rounded-lg w-full h-[180px]"
           alt="res-logo" 
@@ -25,26 +26,11 @@ const RestaurantCard = (props) =>{
         <h4>{avgRatingString} ⭐</h4>
         <h4>{costForTwo}</h4>
         <h4>{sla?.deliveryTime} minutes</h4>
-        <h4>{sla?.lastMileTravelString}</h4>
+        <h4>{sla?.lastMileTravelString ?? '2.0 km'}</h4>
         <h3>{areaName}</h3>
 
       </div>
     )
-  };
-
-  //Higher order component
-
-  //input - RestaurantCard =>> RestaurantCardNear
-
- export const withNearLabel = (RestaurantCard) =>{
-    return(props) =>{
-      return(
-        <div className="">
-          <label className="bg-black text-white m-2 p-2 rounded-lg absolute">Near</label>
-          <RestaurantCard {...props}/>
-        </div>
-      )
-    }
   }
 
   export default RestaurantCard;
