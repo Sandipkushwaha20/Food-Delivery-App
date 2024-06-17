@@ -36,47 +36,58 @@ const Body = () => {
   return ListOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
-        <input
-          type="text"
-          className="search-box"
-          value={SearchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-        />
-        <button
-          onClick={() => {
-            //Filter restaurant card and filter the UI
-            //searchText
-            const filterdRestaurants = ListOfRestaurants.filter((res) =>
-              res?.info?.name
-                ?.toLowerCase()
-                ?.includes(SearchText.toLocaleLowerCase())
-            );
+    <div className="body ">
+      <div className="filter flex">
 
-            setFilterdRestaurants(filterdRestaurants);
-          }}
-        >
-          {" "}
-          search
-        </button>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            //filter logic here
-            const filteredList = ListOfRestaurants.filter(
-              //here I can write res or restaurant what ever I wish
-              (restaurant) => restaurant.info.avgRatingString >= 4
-            );
-            setFilterdRestaurants(filteredList);
-          }}
-        >
-          Top Rated Restaurant
-        </button>
+      {/* Search Restaurant */}
+       <div className="search m-4 p-4">
+          <input
+            type="text"
+            className="border border-solid border-black m-2 rounded-md"
+            value={SearchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+            />
+          <button className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+            onClick={() => {
+              //Filter restaurant card and filter the UI
+              //searchText
+              const filterdRestaurants = ListOfRestaurants.filter((res) =>
+                res?.info?.name
+                  ?.toLowerCase()
+                  ?.includes(SearchText.toLocaleLowerCase())
+              );
+
+              setFilterdRestaurants(filterdRestaurants);
+            }}
+          >
+            {" "}
+            search
+          </button>
       </div>
-      <div className="res-container">
+
+      {/* Top Rated Restaurant */}
+        <div className="m-4 p-4 flex items-center">
+          <button
+            className="filter-btn  px-4 py-2 bg-gray-100 rounded-lg"
+            onClick={() => {
+              //filter logic here
+              const filteredList = ListOfRestaurants.filter(
+                //here I can write res or restaurant what ever I wish
+                (restaurant) => restaurant.info.avgRatingString >= 4
+              );
+              setFilterdRestaurants(filteredList);
+            }}
+          >
+            Top Rated Restaurant
+          </button>
+        </div>
+        
+      </div>
+
+      {/* Restaurant Container */}
+      <div className="flex flex-wrap items-center">
         {filterdRestaurants.map((restaurant) => (
           <Link key={restaurant?.info?.id} to={"/restaurants/" + restaurant?.info?.id}
           >
