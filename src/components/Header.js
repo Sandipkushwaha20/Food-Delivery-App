@@ -9,10 +9,11 @@ const Header = () => {
   const [BtnNameReact, setBtnNameReact] = useState("login");
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="flex justify-between bg-pink-50 shadow-lg sm:bg-yellow-200 lg:bg-green-50"> 
+    <div className="h-20 w-full flex justify-between bg-pink-50 shadow-lg
+     sm:bg-yellow-200 lg:bg-green-50 font-semibold"> 
     {/* if device is greater then sm */}
       <div className="logo-container">
-        <img className="w-24" src={LOGO_URL} />
+        <img className="w-[150px] h-20" src={LOGO_URL} />
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4">
