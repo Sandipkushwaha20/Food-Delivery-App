@@ -191,3 +191,11 @@ export default UserClass;
  */
 
  ### Using the async keyword allows you to use the await keyword to wait for the promise to resolve before proceeding with the next line of code.
+
+
+
+ # Lifting State up in react
+ [text](https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example)
+
+ # Props drilling
+ [text](https://react.dev/learn/passing-data-deeply-with-context#replace-prop-drilling-with-context)

@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { IMG_CDN_URL } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 //RestroCards
 const RestaurantCard = (props) =>{
@@ -13,6 +15,7 @@ const RestaurantCard = (props) =>{
     avgRatingString,
   } = resData?.info;
 
+  const {loggedInUser} = useContext(UserContext);
     return(
       <div className=" m-4 p-4 w-[300px] h-[460px] rounded-lg bg-gray-100
        hover:bg-gray-200 items-center "> 
@@ -27,7 +30,7 @@ const RestaurantCard = (props) =>{
         <h4>{sla?.deliveryTime} minutes</h4>
         <h4>{sla?.lastMileTravelString}</h4>
         <h3>{areaName}</h3>
-
+        <h3>{loggedInUser}</h3>
       </div>
     )
   };
