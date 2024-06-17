@@ -14,9 +14,11 @@ const RestaurantMenu = () => {
   const {name, cuisines, avgRating, areaName, cloudinaryImageId, costForTwo,
   } = resInfo?.cards[2]?.card?.card?.info;
 
+  console.log("skkkkkkkkk",resInfo);
 
   const {itemCards} = 
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    // console.log(itemCards, "sksk");
 
   return  (
     <div className="menu">
