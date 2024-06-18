@@ -5,7 +5,7 @@ import ItemList from "./ItemList";
 const RestaurantCategory = ({data, showItems , setShowIndex}) => {
 
   // const data = props.data;
-  // console.log(data , "skskk");
+  // console.log(data.itemCards , "sksk888k");
   const handleClick = () => {
     setShowIndex();
   };

@@ -1,8 +1,15 @@
 import { IMG_CDN_URL } from "../utils/constants";
+import {useDispatch} from "react-redux";
+import {addItem} from "../utils/cartSlice"
+
 
 const ItemList = (props) => {
   const items = props.item;
-//   console.log(items, "kssksksksk");
+  // console.log(props, "itemList");
+  const dispatch = useDispatch();
+  const hadleAddItem = (item) =>{
+      dispatch(addItem(item));
+  }
   return (
     <div className="">
       {items.map((item) => (
@@ -25,13 +32,18 @@ const ItemList = (props) => {
           </div>
           <div className="w-40 p-4 ">
             <div className="absolute">
-                <button className="p-1 mx-5 mt-15  bg-black text-white rounded-lg">Add+</button>
+              <button
+                className="p-1 mx-16   bg-black
+                 text-white rounded-lg shadow-lg"
+                 onClick={() => hadleAddItem(item)}
+              >
+                Add+
+              </button>
             </div>
             <img
               src={IMG_CDN_URL + item?.card?.info.imageId}
               className="w-full rounded-lg"
             />
-            
           </div>
         </div>
       ))}

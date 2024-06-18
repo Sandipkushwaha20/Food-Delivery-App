@@ -45,38 +45,46 @@
 - Just JS function which return  JSX code.
 
  ## class based component(Older method)
-  - import React from "react";
-  - class UserClass extends React.Component {
-  -    constructor(props){
-  -    super(props);
+  
 
-  -     console.log(props);
-  -  }
-  -  render() {
-  -      const {name , location} = this.props;
-  -      return < div className="user-card">
-  -      < h2>Name: {name}</ h2>
-  -      < h3>Location: {location}</ h3>
-  -      < h2>Contact: dummy@gmail.com</ h2>
-  -  </ div>
-  -    }
-  - }
+``` javascript
+      import React from "react";
+       class UserClass extends React.Component {
+          constructor(props){
+          super(props);
 
-export default UserClass;
+           console.log(props);
+        }
+        render() {
+            const {name , location} = this.props;
+            return < div className="user-card">
+            < h2>Name: {name}</ h2>
+            < h3>Location: {location}</ h3>
+            < h2>Contact: dummy@gmail.com</ h2>
+        </ div>
+          }
+       }
+
+   export default UserClass;
+```
 
 - It has a class which has render method, which return JSX code.
 - We use it in same way like function based components e.g. 
-< UserClass />
-
+``` javascript
+   <UserClass />
+```
 ## function based component(New Method)
-  - const User = () =>{
-  -  return < div className="user-card">
-  -      <h2>Name: Sandip Kushwaha</h2>
-  -      < h3>Location: Prayagraj</ h3>
-  -     < h2>Contact: dummy@gmail.com</ h2>
-  -  </ div>
-- }
-- export default User;
+  
+``` javascript
+    const User = () =>{
+      return < div className="user-card">
+            <h2>Name: Sandip Kushwaha</h2>
+            < h3>Location: Prayagraj</ h3>
+         < h2>Contact: dummy@gmail.com</ h2>
+      </ div>
+      }
+   export default User; 
+```
 - It return JSX code.
 
  # Two Types of  Export/Import
@@ -96,7 +104,7 @@ export default UserClass;
 # React Hooks
  - It is Normal JS utility funtions.
  ## Whenever state variable update, react triggers a reconciliation cycle(re-renders the component). 
- - [text](https://github.com/acdlite/react-fiber-architecture) react-fiber
+ - [react-fiber](https://github.com/acdlite/react-fiber-architecture) 
 
  ## Hooks can only be called inside of the body of a function component not from outside.
 
@@ -129,11 +137,15 @@ export default UserClass;
 
 ## 2 types of Routing in web apps
    ### Client Side Routing 
+    ``` javascript
     e.g. <Link to="path"></Link> 
+   ```
    - It's not making network call, all the components are already loaded into our app when I loaded at the first time.
    
    ### Server Side Routing 
-    e.g. <as href="path"></as> 
+    ``` javascript
+    e.g. <a href="path"></a> 
+   ```
    - It's making network call and loading whole page again.
 
 
@@ -194,8 +206,74 @@ export default UserClass;
 
 
 
- # Lifting State up in react
- [text](https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example)
+ # [Lifting State up in react](https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example)
 
- # Props drilling
- [text](https://react.dev/learn/passing-data-deeply-with-context#replace-prop-drilling-with-context)
+ #  [Props drilling](https://react.dev/learn/passing-data-deeply-with-context#replace-prop-drilling-with-context)
+
+
+
+ # Redux Toolkit
+  - Install @reduxjs/toolkit and react-redux
+  - Build our store
+  - Connect our store to our app
+  - Slice (cartSlice)
+  - dispatch(action)
+  - Selector
+
+  
+  
+  ``` javascript 
+      //Vanialla(older) Redux => DON'T MUTATE STATE && returning was mendatory
+      addItem: (state , action) => {
+         const newState =  [...state]; 
+         newState.items.push(action.payload);
+         return newSatate;
+         },
+   ```
+
+
+   
+
+  #### Behind the seen Redux is using the Immer Libray to doing the same older version work
+   ####  [Immer](https://immerjs.github.io/immer/)
+
+
+   ####  [RTK Query](https://redux-toolkit.js.org/tutorials/rtk-query)
+
+  ``` javascript
+   import { createSlice } from "@reduxjs/toolkit";
+
+   const cartSlice = createSlice({
+      name: "cart",
+      initialState: {
+         items: [],
+      },
+      reducers: {
+         addItem: (state , action) => {
+                //Redux Toolkit returning is not mendatory
+               //We have to mutate the state
+               //In new Version directly mutate 
+               //Mutation the satate here
+               //Redux Toolkit use Immer Behind the seen
+               state.items.push(action.payload);
+         },
+         removeItem: (state , action) =>{
+               state.items.pop();
+         },
+         //originalState = ["Pizza"]
+         clearCart:(state) =>{
+               // if state = ["Sandip"] or [] It's not 
+               //work bc you are not mutating the state  
+               //you are just adding the refrece of it
+               console.log(current(state)); // printing in redux
+               state.items.length = 0; //originalState = [] 
+                        OR
+               return {item : []}; //this new [] wil be replaced inside originalState = []
+         },
+      }
+   });
+
+   export const {addItem , removeItem , clearCart} = cartSlice.actions;
+
+   export default cartSlice.reducer;
+ ```

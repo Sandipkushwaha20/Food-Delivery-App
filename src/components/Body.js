@@ -11,7 +11,7 @@ const Body = () => {
   //Local State Variable - Super pawerful variable
   const [ListOfRestaurants, setListOfRestaurants] = useState([]);
   const [filterdRestaurants, setFilterdRestaurants] = useState([]);
-  console.log(ListOfRestaurants, "skand");
+  // console.log(ListOfRestaurants, "skand");
   const RestaurantCardNear = withNearLabel(RestaurantCard);
 
   const [SearchText, setSearchText] = useState("");
@@ -23,13 +23,13 @@ const Body = () => {
   const fetchData = async () => {
     const data = await fetch(CARD_API);
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     //Optional channing
     setListOfRestaurants(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilterdRestaurants(
-      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 

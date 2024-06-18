@@ -8,6 +8,9 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext"
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 // import Grocery from "./components/Grocery";
 
 //Chunking
@@ -41,6 +44,7 @@ const AppLayout = () => {
 
     //out Side Default value
     // also we can use like this
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser: userName , setUserName}}>
       <div className="app">
         {/* When ever change in the path the Outlet will be filled by the children according to the path*/}
@@ -48,6 +52,7 @@ const AppLayout = () => {
         <Outlet/>
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -81,6 +86,10 @@ const appRouter = createBrowserRouter([
         // : => dynamic path
         path: "/restaurants/:resId",
         element: <RestaurantMenu/>
+      },
+      {
+        path: "/cart",
+        element: <Cart/>
       },
     ],
     errorElement: <Error/>,
