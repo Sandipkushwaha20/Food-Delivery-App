@@ -1,21 +1,21 @@
 # React ✈️
 
 # Parcel
-- It's Basic application is bundling => bunles all the files and make a single file
+- Its Basic application is bundling => bundles all the files and makes a single file
 - Dev Build
 - Local Server
-- HMR - Hot module Replacement
-- File Watching algoritham - written in C++
+- HMR - Hot Module Replacement
+- File Watching algorithm - written in C++
 - Caching - Faster Builds
 - Image Optimization
 - Minification
 - Bundling
 - Compress
-- Consistece Hashing
-- Diffrencial Bundling - support older browser
+- Consistent Hashing
+- Differential Bundling - support older browser
 - Diagnostic
 - Error Handling
-- HTTPs
+- HTTPS
 - Tree Shaking - remove unused code for you
 - Different dev and production bundles
 
@@ -29,12 +29,12 @@
  *  - Cart
  *
  ## Body
- *  - search
+ *  - Search
  *  - RestaurantContainer
  *    - RestauractCard
  *     - img
- *     - Name of Res , star Rating,
- *     - cuisine, delevery time
+ *     - Name of Res, star Rating,
+ *     - cuisine, delivery time
  ## Footer
  *  - Copyright
  *  - Links
@@ -42,7 +42,7 @@
  *  - Contact
 
 # Components
-- Just JS function which return  JSX code.
+- Just JS function which returns  JSX code.
 
  ## class based component(Older method)
   
@@ -68,8 +68,8 @@
    export default UserClass;
 ```
 
-- It has a class which has render method, which return JSX code.
-- We use it in same way like function based components e.g. 
+- It has a class that has a render method, which returns JSX code.
+- We use it in the same way as function components e.g. 
 ``` javascript
    <UserClass />
 ```
@@ -85,7 +85,7 @@
       }
    export default User; 
 ```
-- It return JSX code.
+- It returns JSX code.
 
  # Two Types of  Export/Import
 
@@ -99,27 +99,27 @@
 
     export const Component;
     import {Component} from "path";
- - Note: Can I use a default export along with named export ? -> YES 
+ - Note: Can I use a default export and a named export? -> YES 
 
 # React Hooks
- - It is Normal JS utility funtions.
- ## Whenever state variable update, react triggers a reconciliation cycle(re-renders the component). 
+ - It is a Normal JS utility function.
+ ## Whenever state variable updates, react triggers a reconciliation cycle(re-renders the component). 
  - [react-fiber](https://github.com/acdlite/react-fiber-architecture) 
 
- ## Hooks can only be called inside of the body of a function component not from outside.
+ ## Hooks can only be called inside the body of a function component not from outside.
 
  ## useState()
-   - It is used to create Local State vaiable inside your  function component
-   - Always try to call this hook on the top(just after component name) => It's a good practice and React will understand it properly
+   - It is used to create Local State variable inside your  function component
+   - Always try to call this hook on the top(just after the component name) => It's a good practice and React will understand it properly
    - Never create your state variable inside if or else
-      e.g. - if(const [name , setName] = useState()) => never do this, This is a valid JS code, Allowed to do it by JS, but this can create inconsistencies in your code.
+      e.g. - if(const [name, setName] = useState()) => never do this, This is a valid JS code, Allowed to do it by JS, but this can create inconsistencies in your code.
 ## Never use your useState() Hook inside a condition or for loop or functions.
 
             call Back fun, dependency array(not mandatory)
  ## useEffect(() => {}  ,   [])
- - it will called after the your component is        renderd       
+ - it will called after your component is rendered       
 
- ### if no dependency array => useEffect is called at every render
+ ### If no dependency array => useEffect is called at every render
  - useEffect(() => {})
 
  ### if dependency array is empty = [] => useEffect is called on initial render(just once)
@@ -135,18 +135,18 @@
 
 # Router
 
-## 2 types of Routing in web apps
+## 2 Types of Routing in Web apps
    ### Client Side Routing 
     ``` javascript
       <Link to="path"></Link> 
    ```
-   - It's not making network call, all the components are already loaded into our app when I loaded at the first time.
+   - It's not making network calls, all the components are already loaded into our app when I loaded at the first time.
    
    ### Server Side Routing 
     ``` javascript
       <a href="path"></a> 
    ```
-   - It's making network call and loading whole page again.
+   - It's making a network call and loading the whole page again.
 
 
 # React Life Cycle Method
@@ -189,13 +189,13 @@
  * Constructor(dummy)
  * Render(dummy)
  *      <HTML dummy>
- * Componet Did Mount
+ * Component Did Mount
  *      <API Call>
  *      <this.setState -> State variable is updated 
  * --------UPDATE ---------
  * 
  *      render(API data)
- *      <HTML (new API data)> At this point user will see name , location
+ *      <HTML (new API data)> At this point, the user will see name, location
  *  component Did Update 
  *  
  * When I will leave the page the componentWillUnmount() will be called
@@ -206,7 +206,7 @@
 
 
 
- # [Lifting State up in react](https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example)
+ # [Lifting State in React](https://react.dev/learn/sharing-state-between-components#lifting-state-up-by-example)
 
  #  [Props drilling](https://react.dev/learn/passing-data-deeply-with-context#replace-prop-drilling-with-context)
 
@@ -223,8 +223,8 @@
   
   
   ``` javascript 
-      //Vanialla(older) Redux => DON'T MUTATE STATE && returning was mendatory
-      addItem: (state , action) => {
+      //Vanialla(older) Redux => DON'T MUTATE STATE && returning was mandatory
+      addItem: (state, action) => {
          const newState =  [...state]; 
          newState.items.push(action.payload);
          return newSatate;
@@ -234,7 +234,7 @@
 
    
 
-  #### Behind the seen Redux is using the Immer Libray to doing the same older version work
+  #### Behind the seen Redux is using the Immer Libray to do the same older version work
    ####  [Immer](https://immerjs.github.io/immer/)
 
 
@@ -250,11 +250,11 @@
          items: [],
       },
       reducers: {
-         addItem: (state , action) => {
-                //Redux Toolkit returning is not mendatory
+         addItem: (state, action) => {
+                //Redux Toolkit returning is not mandatory
                //We have to mutate the state
-               //In new Version directly mutate 
-               //Mutation the satate here
+               //In the new Version directly mutate 
+               //Mutation the state here
                //Redux Toolkit use Immer Behind the seen
                state.items.push(action.payload);
          },
@@ -265,11 +265,11 @@
          clearCart:(state) =>{
                // if state = ["Sandip"] or [] It's not 
                //work bc you are not mutating the state  
-               //you are just adding the refrece of it
+               //you are just adding the reference of it
                console.log(current(state)); // printing in redux
                state.items.length = 0; //originalState = [] 
                         OR
-               return {item : []}; //this new [] wil be replaced inside originalState = []
+               return {item : []}; //this new [] will be replaced inside originalState = []
          },
       }
    });
@@ -280,12 +280,12 @@
 
  ```
 
-#  Type of Testings(devloper) [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+#  Type of Testings(developer) [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
  - Unit Testing
  - Integaration Testing
  - Ent to End Testing - e2e testing
 
- #### React Testing Library uses something known as JEST => JEST is uses Babel
+ #### React Testing Library uses something known as JEST => JEST is used Babel
 
  ### Setting up Testing in our app
  - Install React Testing Library
