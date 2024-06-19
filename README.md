@@ -278,7 +278,7 @@
 
    export default cartSlice.reducer;
 
- ``
+ ```
 
 #  Type of Testings(devloper) [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
  - Unit Testing
