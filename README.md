@@ -138,13 +138,13 @@
 ## 2 types of Routing in web apps
    ### Client Side Routing 
     ``` javascript
-    e.g. <Link to="path"></Link> 
+      <Link to="path"></Link> 
    ```
    - It's not making network call, all the components are already loaded into our app when I loaded at the first time.
    
    ### Server Side Routing 
     ``` javascript
-    e.g. <a href="path"></a> 
+      <a href="path"></a> 
    ```
    - It's making network call and loading whole page again.
 
@@ -240,6 +240,7 @@
 
    ####  [RTK Query](https://redux-toolkit.js.org/tutorials/rtk-query)
 
+
   ``` javascript
    import { createSlice } from "@reduxjs/toolkit";
 
@@ -276,4 +277,27 @@
    export const {addItem , removeItem , clearCart} = cartSlice.actions;
 
    export default cartSlice.reducer;
- ```
+
+ ``
+
+#  Type of Testings(devloper) [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+ - Unit Testing
+ - Integaration Testing
+ - Ent to End Testing - e2e testing
+
+ #### React Testing Library uses something known as JEST => JEST is uses Babel
+
+ ### Setting up Testing in our app
+ - Install React Testing Library
+ - Installed jest
+ - Installed Babel dependencies
+ - Configure Babel
+ - Configure Parcel Config to disable default babel transpilation
+ - Jest Configuration(npx jest --init , it create a new file for jest)
+ - Install Jsdom library
+ - i @babel/preset-react to make jsx work in test cases
+ - Include @babel/preset-react inside my babel config
+ - npm i -D @testing-library/jest-dom
+ - [Babel](https://parceljs.org/languages/javascript/#babel)
+
+#### After npm run test command if you see  No tests found that means you successfully configure your react testing library Jest , Babel and Parcel

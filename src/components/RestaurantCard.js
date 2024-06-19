@@ -30,7 +30,7 @@ const RestaurantCard = (props) =>{
         <h4>{sla?.deliveryTime} minutes</h4>
         <h4>{sla?.lastMileTravelString}</h4>
         <h3>{areaName}</h3>
-        <h3>{loggedInUser}</h3>
+        {/* <h3>{loggedInUser}</h3> */}
       </div>
     )
   };

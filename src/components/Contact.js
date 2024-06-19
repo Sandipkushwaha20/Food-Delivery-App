@@ -2,8 +2,12 @@
  const Contact = () =>{
     return(
         <div>
-            <h1>Contact Us page</h1>
-            <h2>Namaste React Web. Series</h2>
+            <h1 className="font-bold text-3xl p-4 m-4">Contact Us page</h1>
+            <form className="">
+                <input type="text" className="border border-black p-2 m-2 rounded-lg" placeholder="name"/>
+                <input type="text" className="border border-black p-2 m-2 rounded-lg" placeholder="message"/>
+                <button className="border border-black p-2 m-2 rounded-lg bg-gray-100">Submit</button>
+            </form>
         </div>
     )
  }

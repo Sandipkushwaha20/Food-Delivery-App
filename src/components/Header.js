@@ -49,7 +49,7 @@ const Header = () => {
           </li>
 
           <li className="px-4 font-bold text-2xl">
-            <Link to="/cart"> Cart ({cartItems.length} items)</Link>
+            <Link to="/cart"> Cart-({cartItems.length} items)</Link>
           </li>
 
           <button
